@@ -46,3 +46,5 @@ print(objetoPila.__dict__)
 #eliminamos elementos de la lista ya creada
 for i in range(5):
     print(objetoPila.pop(),end=",")
+
+print("cambiado")
