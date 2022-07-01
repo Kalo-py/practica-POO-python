@@ -1,0 +1,69 @@
+Echemos un vistazo a algunas constantes seleccionadas útiles para detectar errores de flujo:
+
+errno.EACCES → Permiso denegado
+
+El error se produce cuando intentas, por ejemplo, abrir un archivo con atributos de solo lectura para abrirlo.
+
+
+errno.EBADF → Número de archivo incorrecto
+
+El error se produce cuando intentas, por ejemplo, operar un stream sin abrirlo.
+
+errno.EEXIST → Archivo existente
+
+El error se produce cuando intentas, por ejemplo, cambiar el nombre de un archivo con su nombre anterior.
+
+
+errno.EFBIG → Archivo demasiado grande
+
+El error ocurre cuando intentas crear un archivo que es más grande que el máximo permitido por el sistema operativo.
+
+
+errno.EISDIR → Es un directorio
+
+El error se produce cuando intentas tratar un nombre de directorio como el nombre de un archivo ordinario.
+
+
+errno.EMFILE → Demasiados archivos abiertos
+
+El error se produce cuando intentas abrir simultáneamente más streams de los aceptables para el sistema operativo.
+
+
+errno.ENOENT → El archivo o directorio no existe
+
+El error se produce cuando intentas acceder a un archivo o directorio inexistente.
+
+
+errno.ENOSPC → no queda espacio en el dispositivo
+
+El error ocurre cuando no hay espacio libre en el dispositivo.
+
+
+
+Modo de apertura r: lectura
+
+El stream será abierto en modo lectura.
+El archivo asociado con el stream debe existir y tiene que ser legible, de lo contrario la función open() lanzará una excepción.
+
+Modo de apertura w: escritura
+
+El stream será abierto en modo escritura.
+El archivo asociado con el stream no necesita existir. Si no existe, se creará; si existe, se truncará a la longitud de cero (se borrá); si la creación no es posible (por ejemplo, debido a los permisos del sistema) la función open() lanzará una excepción.
+
+Modo de apertura a: adjuntar
+
+El stream será abierto en modo adjuntar.
+El archivo asociado con el stream no necesita existir; si no existe, se creará; si existe, el cabezal de grabación virtual se establecerá al final del archivo (el contenido anterior del archivo permanece intacto).
+
+Modo de apertura r+: leer y actualizar
+
+El stream será abierto en modo leer y actualizar.
+El archivo asociado con el stream debe existir y tiene que ser escribible, de lo contrario la función open() lanzará una excepción.
+Se permiten operaciones de lectura y escritura en el stream.
+
+Modo de apertura w+: escribir y actualizar
+
+El stream será abierto en modo escribir y actualizar.
+El archivo asociado con el stream no necesita existir; si no existe, se creará; el contenido anterior del archivo permanece intacto.
+Se permiten operaciones de lectura y escritura en el stream.
+
